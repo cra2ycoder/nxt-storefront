@@ -29,3 +29,4 @@
 
   - @routes/pages
   - @appconfig/default
+  - @localization/en-us
