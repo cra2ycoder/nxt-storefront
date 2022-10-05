@@ -30,3 +30,5 @@
   - @routes/pages
   - @appconfig/default
   - @localization/en-us
+  - @pages/home
+  - @pages/productlist
