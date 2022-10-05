@@ -21,6 +21,9 @@
 - Mock API Integrated
 - all the pages documented
 - all the apis documented
+- easy routes enable and disabled
+- limited access for localstorage and session storages
+- api based config page for app config updates at runtime
   
 ---
 
