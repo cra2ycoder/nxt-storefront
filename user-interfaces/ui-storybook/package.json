@@ -1,0 +1,20 @@
+{
+  "name": "@ui/storybook",
+  "version": "1.0.0-beta",
+  "description": "",
+  "private": "true",
+  "scripts": {
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "6.5.12",
+    "@storybook/addon-essentials": "6.5.12",
+    "@storybook/addon-links": "6.5.12",
+    "@storybook/react": "6.5.12",
+    "@styled-jsx/plugin-sass": "4.0.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
