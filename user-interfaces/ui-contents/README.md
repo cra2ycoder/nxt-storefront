@@ -13,6 +13,8 @@
   - `ButtonText` => <div> only for buttons
   - `UnderlineText` => <span>
   - `StrikethroughText` => <span>
+  - `NumberText` => <span>
+  - `AddressText` => <address>
 
 - Images
 
