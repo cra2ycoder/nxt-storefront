@@ -12,7 +12,12 @@
     "@storybook/addon-essentials": "6.5.12",
     "@storybook/addon-links": "6.5.12",
     "@storybook/react": "6.5.12",
-    "@styled-jsx/plugin-sass": "4.0.2"
+    "@styled-jsx/plugin-sass": "4.0.2",
+    "sass": "1.55.0",
+    "@storybook/preset-scss": "1.0.3",
+    "css-loader": "6.7.1",
+    "sass-loader": "13.0.2",
+    "style-loader": "3.3.1"
   },
   "keywords": [],
   "author": "",
