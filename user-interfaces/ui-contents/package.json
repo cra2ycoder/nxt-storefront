@@ -5,6 +5,9 @@
   "private": "true",
   "scripts": {},
   "keywords": [],
+  "devDependencies": {
+    "sass": "1.55.0"
+  },
   "author": "",
   "license": "MIT"
 }
