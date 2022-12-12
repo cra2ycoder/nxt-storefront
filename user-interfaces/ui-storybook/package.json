@@ -8,16 +8,15 @@
     "build-storybook": "build-storybook --no-dll"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "6.5.12",
-    "@storybook/addon-essentials": "6.5.12",
-    "@storybook/addon-links": "6.5.12",
-    "@storybook/react": "6.5.12",
-    "@styled-jsx/plugin-sass": "4.0.2",
-    "sass": "1.55.0",
+    "@storybook/addon-actions": "6.5.14",
+    "@storybook/addon-essentials": "6.5.14",
+    "@storybook/addon-links": "6.5.14",
     "@storybook/preset-scss": "1.0.3",
-    "css-loader": "6.7.1",
-    "sass-loader": "13.0.2",
-    "style-loader": "3.3.1"
+    "@storybook/react": "6.5.14",
+    "@styled-jsx/plugin-sass": "4.0.2",
+    "@storybook/builder-webpack5": "6.5.14",
+    "@storybook/manager-webpack5": "6.5.14",
+    "sass": "1.56.2"
   },
   "keywords": [],
   "author": "",
