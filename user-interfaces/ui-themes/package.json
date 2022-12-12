@@ -4,6 +4,10 @@
   "description": "",
   "private": "true",
   "scripts": {},
+  "files": [
+    "styles",
+    "themes"
+  ],
   "keywords": [],
   "author": "",
   "license": "MIT"
