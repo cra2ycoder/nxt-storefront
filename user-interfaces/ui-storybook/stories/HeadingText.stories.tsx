@@ -3,6 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 
 import { IHeadingTextProps } from '@ui/contents/typography/typings'
 import { HeadingText } from '@ui/contents/typography/HeadingText'
+import customStyles from './customStyles.module.scss'
 
 export default {
   title: 'UI/Contents/HeadingText',
@@ -17,6 +18,7 @@ const Template: Story<IHeadingTextProps> = args => <HeadingText {...args} />
 export const H1 = Template.bind({})
 H1.args = {
   text: 'Heading Text',
+  styleModule: `${customStyles.h1} ${customStyles['txt-transform']}`,
 }
 
 export const H2 = Template.bind({})
