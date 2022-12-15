@@ -22,8 +22,8 @@
     "@emotion/styled": "11.10.0",
     "@mui/icons-material": "5.8.4",
     "@mui/lab": "5.0.0-alpha.94",
-    "@ui/themes": "workspace:*",
-    "@ui/contents": "workspace:*"
+    "@ui/elements": "workspace:*",
+    "@styles/scss": "workspace:*"
   },
   "devDependencies": {
     "typescript": "4.7.4",

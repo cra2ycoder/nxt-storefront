@@ -1,11 +1,11 @@
 {
-  "name": "@ui/themes",
+  "name": "@styles/scss",
   "version": "1.0.0-beta",
   "description": "",
   "private": "true",
   "scripts": {},
   "files": [
-    "styles",
+    "core",
     "themes"
   ],
   "keywords": [],

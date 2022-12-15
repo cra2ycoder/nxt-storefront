@@ -8,8 +8,8 @@
     "build-storybook": "build-storybook --no-dll"
   },
   "dependencies": {
-    "@ui/themes": "workspace:*",
-    "@ui/contents": "workspace:*"
+    "@styles/scss": "workspace:*",
+    "@ui/elements": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-actions": "6.5.14",

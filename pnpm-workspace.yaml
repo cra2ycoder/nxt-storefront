@@ -1,3 +1,5 @@
 packages:
-  - 'user-interfaces/*'
-  - 'visual-store'
+  - '@ui/*'
+  - '@api/*'
+  - '@styles'
+  - '@playground'
