@@ -2,8 +2,8 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 import { IHeadingTextProps } from '@ui/elements/typography/typings'
 import { HeadingText } from '@ui/elements/typography/HeadingText'
-import customStyles from './customStyles.module.scss'
-import { typoStyles } from '@styles/scss/core'
+// import customStyles from './customStyles.module.scss'
+// import { typoStyles } from '@styles/scss/core'
 
 export default {
   title: 'UI/Elements/Headings',
@@ -12,10 +12,44 @@ export default {
 
 const Template: Story<IHeadingTextProps> = args => <HeadingText {...args} />
 
-export const Headings = Template.bind({})
-Headings.storyName = 'h1-h6'
-Headings.args = {
+export const H1 = Template.bind({})
+H1.storyName = 'h1'
+H1.args = {
   text: 'Heading Text',
-  // styleModule: customStyles.h1,
-  // styleModule: `${customStyles.h1} ${customStyles['txt-transform']}`,
+  variant: 'h1',
+}
+
+export const H2 = Template.bind({})
+H2.storyName = 'h2'
+H2.args = {
+  text: 'Heading Text',
+  variant: 'h2',
+}
+
+export const H3 = Template.bind({})
+H3.storyName = 'h3'
+H3.args = {
+  text: 'Heading Text',
+  variant: 'h3',
+}
+
+export const H4 = Template.bind({})
+H4.storyName = 'h4'
+H4.args = {
+  text: 'Heading Text',
+  variant: 'h4',
+}
+
+export const H5 = Template.bind({})
+H5.storyName = 'h5'
+H5.args = {
+  text: 'Heading Text',
+  variant: 'h4',
+}
+
+export const H6 = Template.bind({})
+H6.storyName = 'h6'
+H6.args = {
+  text: 'Heading Text',
+  variant: 'h6',
 }
