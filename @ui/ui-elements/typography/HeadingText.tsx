@@ -15,3 +15,4 @@ function HeadingText({
 }
 
 export { HeadingText }
+export default HeadingText
