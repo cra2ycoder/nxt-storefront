@@ -35,4 +35,4 @@
 - Javascript Software Development Kit (JSSDK) 
   - any pages can be exported as external js & css files to integrate with any 3rd party sites
 - All the components can be re-used to any other `ecomm` specific applications
-- Storeboard for all the UI and Data layers
+- Storyboard for all the UI and Data layers
