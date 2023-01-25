@@ -23,6 +23,7 @@
     "@mui/icons-material": "5.8.4",
     "@mui/lab": "5.0.0-alpha.94",
     "@ui/elements": "workspace:*",
+    "@ui/layouts": "workspace:*",
     "@styles/scss": "workspace:*"
   },
   "devDependencies": {

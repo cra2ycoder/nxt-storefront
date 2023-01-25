@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@styles/scss": "workspace:*",
-    "@ui/elements": "workspace:*"
+    "@ui/elements": "workspace:*",
+    "@ui/layouts": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-actions": "6.5.14",
