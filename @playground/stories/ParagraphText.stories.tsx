@@ -4,7 +4,7 @@ import { IParagraphTextProps } from '@ui/elements/typography/typings'
 import { ParagraphText } from '@ui/elements/typography/ParagraphText'
 
 export default {
-  title: 'UI/Elements/Paragraph',
+  title: 'UI/Elements/Typography/Paragraph',
   component: ParagraphText,
 } as Meta
 

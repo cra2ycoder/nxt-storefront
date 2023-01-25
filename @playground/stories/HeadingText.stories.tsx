@@ -2,11 +2,11 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 import { IHeadingTextProps } from '@ui/elements/typography/typings'
 import { HeadingText } from '@ui/elements/typography/HeadingText'
-// import customStyles from './customStyles.module.scss'
+import customStyles from './customStyles.module.scss'
 // import { typoStyles } from '@styles/scss/core'
 
 export default {
-  title: 'UI/Elements/Headings',
+  title: 'UI/Elements/Typography/Headings',
   component: HeadingText,
 } as Meta
 
@@ -17,6 +17,7 @@ H1.storyName = 'h1'
 H1.args = {
   text: 'Heading Text',
   variant: 'h1',
+  styleModule: customStyles.h1,
 }
 
 export const H2 = Template.bind({})
