@@ -16,6 +16,11 @@ function useFetch(props) {
       .then(response => response.json())
       .then(json => console.log(json))
 
+    /**
+     * @todo
+     * expected format
+     * fetchNow(url, {props}).onSuccess(cbk).onFail(cbk)
+     */
     return new Promise((resolve, reject) => {})
   }
 
