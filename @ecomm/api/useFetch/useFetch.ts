@@ -9,7 +9,7 @@ function useFetch(props) {
   } = props
 
   const [isLoading, setIsLoading] = useState(false)
-  const [fetchedResponse, setFetchedResponse] = useState({})
+  const [response, setResponse] = useState({})
 
   async function fetchNow(options, transformModel) {
     fetch('https://jsonplaceholder.typicode.com/todos/1')
@@ -32,9 +32,9 @@ function useFetch(props) {
 
   return {
     isLoading,
-    fetchedResponse,
+    Response,
     fetchNow,
-    setFetchedResponse,
+    setResponse,
     setIsLoading,
   }
 }
