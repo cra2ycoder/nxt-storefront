@@ -1,0 +1,16 @@
+{
+  "name": "@utils/web",
+  "version": "1.0.0-beta",
+  "description": "",
+  "private": "true",
+  "scripts": {},
+  "keywords": [],
+  "dependencies": {
+    "url-polyfill": "1.1.12",
+    "isomorphic-fetch": "3.0.0",
+    "@types/base": "workspace:*"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "MIT"
+}
