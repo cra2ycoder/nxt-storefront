@@ -1,4 +1,5 @@
 import React from 'react'
+import { ILayoutProps } from './typings'
 
 /**
  * @requirements
@@ -8,8 +9,8 @@ import React from 'react'
  * - doesn't have any padding or margins
  *
  */
-function PageWrapper() {
-  return <main>PageWrapper</main>
+function PageWrapper(props: ILayoutProps) {
+  return <main>{props.children}</main>
 }
 
 export { PageWrapper }

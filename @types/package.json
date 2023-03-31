@@ -1,0 +1,12 @@
+{
+  "name": "@types/base",
+  "version": "1.0.0-beta",
+  "description": "",
+  "private": "true",
+  "scripts": {},
+  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "",
+  "license": "MIT"
+}

@@ -24,7 +24,10 @@
     "@mui/lab": "5.0.0-alpha.94",
     "@ui/elements": "workspace:*",
     "@ui/layouts": "workspace:*",
-    "@styles/scss": "workspace:*"
+    "@styles/scss": "workspace:*",
+    "@ecomm/pages": "workspace:*",
+    "@ecomm/api": "workspace:*",
+    "@types/base": "workspace:*"
   },
   "devDependencies": {
     "typescript": "4.7.4",

@@ -9,5 +9,5 @@ export interface IBaseLinkProps extends ITextProps {
 export interface IRouterLinkProps extends IBaseLinkProps {}
 export interface IHyperLinkProps extends IBaseLinkProps {}
 export interface ICTALinkProps extends IBaseLinkProps {
-  onClick: () => {}
+  onClick: () => void
 }

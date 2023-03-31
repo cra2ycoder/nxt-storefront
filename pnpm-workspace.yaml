@@ -3,3 +3,5 @@ packages:
   - '@api/*'
   - '@styles'
   - '@playground'
+  - '@ecomm/*'
+  - '@types'

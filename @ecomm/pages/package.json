@@ -1,0 +1,13 @@
+{
+  "name": "@ecomm/pages",
+  "version": "1.0.0-beta",
+  "description": "",
+  "private": "true",
+  "scripts": {},
+  "keywords": [],
+  "devDependencies": {
+    "sass": "1.55.0"
+  },
+  "author": "",
+  "license": "MIT"
+}

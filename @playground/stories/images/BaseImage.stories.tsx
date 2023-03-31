@@ -11,7 +11,7 @@ export default {
 } as Meta
 
 const Template: Story<IBaseImageProps> = args => (
-  <div style={{ width: '300px', height: '250px', backgroundColor: 'red' }}>
+  <div style={{ width: '350px', height: '250px', backgroundColor: 'red' }}>
     <BaseImage {...args} />
   </div>
 )

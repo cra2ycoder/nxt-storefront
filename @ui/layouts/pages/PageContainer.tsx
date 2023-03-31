@@ -1,4 +1,5 @@
 import React from 'react'
+import { IPageContainer } from './typings'
 
 /**
  * @requirements
@@ -8,8 +9,8 @@ import React from 'react'
  * - has its own inner padding
  * - controls max-width of the site
  */
-function PageContainer() {
-  return <div>PageContainer</div>
+function PageContainer(props: IPageContainer) {
+  return <div>{props.children}</div>
 }
 
 export { PageContainer }
