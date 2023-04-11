@@ -1,23 +1,17 @@
 import { useMemo, useState } from 'react'
-import FetchNow from './FetchNow'
+import { fetchNowIns } from './FetchNow'
 
 function useFetch(props) {
-  const {
-    url = '',
-    init = true,
-    options: defaultOptions = {},
-    transformModel: defaultTransformModel = {},
-  } = props
+  const { url = '', init = true, headers = {}, transformModel = {} } = props
 
   const [isLoading, setIsLoading] = useState(true)
   const [response, setResponse] = useState({})
 
-  const fetchNowIns = new FetchNow()
   const fetchNow = fetchNowIns.callee.bind(
     fetchNowIns,
     url,
-    defaultOptions,
-    defaultTransformModel
+    headers,
+    transformModel
   )
 
   useMemo(async () => {

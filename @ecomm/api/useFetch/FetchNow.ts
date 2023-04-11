@@ -39,5 +39,7 @@ class FetchNow implements IFetchNowProps {
   }
 }
 
-export { FetchNow }
+const fetchNowIns = new FetchNow()
+
+export { FetchNow, fetchNowIns }
 export default FetchNow
