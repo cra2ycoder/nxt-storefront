@@ -5,6 +5,9 @@
   "private": "true",
   "scripts": {},
   "keywords": [],
+  "dependencies": {
+    "react": "18.2.0"
+  },
   "devDependencies": {
     "sass": "1.55.0"
   },
