@@ -8,9 +8,11 @@
     "build-storybook": "build-storybook --no-dll"
   },
   "dependencies": {
+    "react": "18.2.0",
     "@styles/scss": "workspace:*",
     "@ui/elements": "workspace:*",
-    "@ui/layouts": "workspace:*"
+    "@ui/layouts": "workspace:*",
+    "@ecomm/api": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-actions": "6.5.14",
