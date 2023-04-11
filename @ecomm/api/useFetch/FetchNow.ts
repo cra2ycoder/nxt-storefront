@@ -1,8 +1,20 @@
-import { IFetchNowProps } from './typings'
+import { IFetchNowProps, IUseFetchOptionsProps } from './typings'
 
 class FetchNow implements IFetchNowProps {
   successCbk = (res: object) => {}
   failureCbk = (err: object) => {}
+
+  url = ''
+  options: IUseFetchOptionsProps = undefined
+  transformModel = undefined
+  preloadState = undefined
+
+  constructor(url, options, transformModel, preloadState) {
+    this.url = url
+    this.options = options
+    this.transformModel = transformModel
+    this.preloadState = preloadState
+  }
 
   onSuccess(cbk: any) {
     this.successCbk = cbk
@@ -14,9 +26,33 @@ class FetchNow implements IFetchNowProps {
     return this
   }
 
-  callee(url = '', headers = {}, transformModel = {}) {
+  callee(
+    url: string = '',
+    options: object = {},
+    transformModel: object = {},
+    preloadState: any = null
+  ) {
+    this.url = url && url !== 'same' ? url : this.url
+    this.options = Object.keys(options).length ? options : this.options
+    this.transformModel = Object.keys(transformModel).length
+      ? transformModel
+      : this.transformModel
+    this.preloadState =
+      preloadState || this.preloadState || ((s: boolean) => {})
+
+    console.log({
+      url,
+      options,
+      transformModel,
+      preloadState,
+    })
+
+    // console.log(this.preloadState)
+
+    this.preloadState(true)
+
     new Promise(async (x, y) => {
-      await fetch(url, headers)
+      await fetch(this.url, this.options?.headers || {})
         .then(res => {
           if (res.status > 400 && res.status >= 400) {
             throw res
@@ -25,11 +61,13 @@ class FetchNow implements IFetchNowProps {
           }
         })
         .then(data => {
+          this.preloadState(false)
           if (this.successCbk) {
             this.successCbk(data || {})
           }
         })
         .catch(err => {
+          this.preloadState(false)
           if (this.failureCbk) {
             this.failureCbk(err || {})
           }
@@ -39,7 +77,5 @@ class FetchNow implements IFetchNowProps {
   }
 }
 
-const fetchNowIns = new FetchNow()
-
-export { FetchNow, fetchNowIns }
+export { FetchNow }
 export default FetchNow

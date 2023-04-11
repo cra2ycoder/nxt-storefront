@@ -1,34 +1,42 @@
-import { useMemo, useState } from 'react'
-import { fetchNowIns } from './FetchNow'
-import { IUseFetchProps } from './typings'
+import { useEffect, useMemo, useState } from 'react'
+import { FetchNow } from './FetchNow'
+import { IUseFetchProps, IFetchNowFunctionProps } from './typings'
 
 function useFetch(props: IUseFetchProps) {
-  const { url = '', init = true, headers = {}, transformModel = {} } = props
+  const { url = '', init = true, options = {}, transformModel = {} } = props
 
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [response, setResponse] = useState<object>({})
 
-  const fetchNow = fetchNowIns.callee.bind(
-    fetchNowIns,
-    url,
-    headers,
-    transformModel
-  )
+  const fetchNowIns = new FetchNow(url, options, transformModel, setIsLoading)
+  const fetchNow: IFetchNowFunctionProps = fetchNowIns.callee.bind(fetchNowIns)
 
-  useMemo(async () => {
-    if (init === true) {
+  const makeCall = async () => {
+    let ignore = false
+    if (url && init === true) {
       setIsLoading(true)
       await fetchNow()
         .onSuccess(res => {
-          setIsLoading(false)
-          setResponse(res)
+          if (!ignore) {
+            setIsLoading(false)
+            setResponse(res)
+          }
         })
         .onFail(err => {
-          setIsLoading(false)
-          setResponse({})
+          if (!ignore) {
+            setIsLoading(false)
+            setResponse({})
+          }
         })
     }
-  }, [])
+    return () => {
+      ignore = true
+    }
+  }
+
+  useEffect(() => {
+    makeCall()
+  }, [url, Object.keys(options).length, Object.keys(transformModel).length])
 
   return {
     isLoading,

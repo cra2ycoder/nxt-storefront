@@ -3,21 +3,32 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { useFetch } from '@ecomm/api/useFetch'
 
 function Example() {
-  const { fetchNow, response } = useFetch({
+  const { fetchNow, response, isLoading } = useFetch({
     init: true,
-    url: 'https://jsonplaceholder.typicode.com/todos/1',
+    url: 'https://storefront.api.test.nuskin.com/orchestrationservices/storefront/catalogs/categories/hair_care/products?size=12&locale=en_US&storeId=430',
   })
 
-  // useEffect(() => {
-  //   fetchNow()
-  //     .onSuccess(res => {
-  //       console.log({ res })
-  //     })
-  //     .onFail(err => {
-  //       console.log({ err })
-  //     })
-  // }, [])
-  return <>{JSON.stringify(response)}</>
+  const applyFilterNow = () => {
+    fetchNow('same', {
+      queryParams: {
+        filter:
+          '%7B%22filters%22%3A%5B%7B%22field%22%3A%22facet_productCollections%22%2C%22operation%22%3A%22IN%22%2C%22value%22%3A%22ageLOC%22%7D%5D%7D',
+        size: 12,
+        locale: 'en_US',
+      },
+    })
+  }
+
+  return (
+    <div>
+      <button onClick={applyFilterNow}>Apply Filter</button>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <code style={{ maxWidth: '80%' }}>
+          {isLoading ? 'loading...' : JSON.stringify(response)}
+        </code>
+      </div>
+    </div>
+  )
 }
 
 export default {
