@@ -1,11 +1,12 @@
 import { useMemo, useState } from 'react'
 import { fetchNowIns } from './FetchNow'
+import { IUseFetchProps } from './typings'
 
-function useFetch(props) {
+function useFetch(props: IUseFetchProps) {
   const { url = '', init = true, headers = {}, transformModel = {} } = props
 
-  const [isLoading, setIsLoading] = useState(true)
-  const [response, setResponse] = useState({})
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [response, setResponse] = useState<object>({})
 
   const fetchNow = fetchNowIns.callee.bind(
     fetchNowIns,

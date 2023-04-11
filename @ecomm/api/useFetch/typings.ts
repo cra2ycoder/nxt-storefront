@@ -6,3 +6,10 @@ export interface IFetchNowProps {
   onFail(cbk: (err: object) => void): any
   callee(url: string, headers: Object, transformModel: object): any
 }
+
+export interface IUseFetchProps {
+  url: string
+  init?: boolean
+  headers?: object
+  transformModel?: object
+}
