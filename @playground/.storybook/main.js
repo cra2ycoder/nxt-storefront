@@ -1,18 +1,25 @@
-module.exports = {
-  // https://storybook.js.org/docs/react/builders/webpack#extending-storybooks-webpack-config
-  core: {
-    builder: 'webpack5',
-    options: {
-      fsCache: true,
-    },
-  },
+const config = {
   stories: [
     '../stories/**/*.stories.mdx',
     '../stories/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     '@storybook/preset-scss',
-    '@storybook/addoncl-links',
+    '@storybook/addon-links',
     '@storybook/addon-essentials',
   ],
+  docs: {
+    autodocs: 'tag',
+  },
+  typescript: {
+    check: false,
+  },
+  features: {
+    interactionsDebugger: true, // enable playback controls
+  },
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: { fastRefresh: true },
+  },
 }
+export default config

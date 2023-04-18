@@ -1,4 +1,5 @@
 {
+  "sourceType": "unambiguous",
   "presets": [
     [
       "next/babel",
@@ -7,6 +8,17 @@
           "plugins": ["@styled-jsx/plugin-sass"]
         }
       }
-    ]
+    ],
+    [
+      "@babel/preset-env",
+      {
+        "loose": true,
+        "targets": {
+          "chrome": 100
+        }
+      }
+    ],
+    "@babel/preset-typescript",
+    "@babel/preset-react"
   ]
 }
