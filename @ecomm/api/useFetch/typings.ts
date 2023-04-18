@@ -1,28 +1,46 @@
-export type IFetchNowFunctionProps = (
-  url?: string,
-  options?: IUseFetchOptionsProps,
-  transformModel?: object,
-  preloadStateCbk?: (state: boolean) => void
-) => any
-
-export interface IFetchNowProps {
-  successCbk: (res: object) => void
-  failureCbk: (err: object) => void
-
-  onSuccess(cbk: (res: object) => void): any
-  onFail(cbk: (err: object) => void): any
-  callee: IFetchNowFunctionProps
+export type TFetchTransformModelProps = {
+  [prop: any]: any
 }
 
-export interface IUseFetchOptionsProps {
+export type TFetchOptionsProps = {
+  pathParams?: object
+  headers?: object
   queryParams?: object
   postBody?: object
-  headers?: object
+  [prop: any]: any
+}
+
+export type TFetchFunctionProps = (
+  url?: string,
+  options?: TFetchOptionsProps | null,
+  transformModel?: TFetchTransformModelProps | undefined,
+  isLoadingCbk?: (state: boolean) => void
+) => any
+
+export interface IFetchProps {
+  url: string
+  options?: TFetchOptionsProps
+  transformModel?: TFetchTransformModelProps
+  setIsLoading?: Function
+  successCbk?: Function
+  failureCbk?: Function
+
+  new (
+    url: string,
+    options?: TFetchOptionsProps,
+    transformModel?: TFetchTransformModelProps,
+    setIsLoading?: Function
+  ): void
+
+  call?: (
+    options?: TFetchOptionsProps,
+    transformModel?: TFetchTransformModelProps
+  ) => this
 }
 
 export interface IUseFetchProps {
   url: string
   init?: boolean
-  options?: IUseFetchOptionsProps
-  transformModel?: object
+  options?: TFetchOptionsProps
+  transformModel?: TFetchTransformModelProps | undefined
 }
