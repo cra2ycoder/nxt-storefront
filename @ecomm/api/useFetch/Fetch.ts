@@ -1,5 +1,3 @@
-// import {} from '@utils/web'
-
 import {
   IFetchProps,
   TFetchOptionsProps,
@@ -47,7 +45,7 @@ class Fetch implements IFetchProps {
 
     console.log({ options: this.options, transformModel: this.transformModel })
 
-    const finalUrl = ''
+    // const finalUrl = ''
 
     this.setIsLoading(true)
 
