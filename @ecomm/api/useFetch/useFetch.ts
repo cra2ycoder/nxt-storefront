@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
-import { FetchNow } from './FetchNow'
-import { IUseFetchProps, IFetchNowFunctionProps } from './typings'
+import { useEffect, useState } from 'react'
+import Fetch from './Fetch'
+import { IUseFetchProps } from './typings'
 
 function useFetch(props: IUseFetchProps) {
   const { url = '', init = true, options = {}, transformModel = {} } = props
@@ -8,8 +8,8 @@ function useFetch(props: IUseFetchProps) {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [response, setResponse] = useState<object>({})
 
-  const fetchNowIns = new FetchNow(url, options, transformModel, setIsLoading)
-  const fetchNow: IFetchNowFunctionProps = fetchNowIns.callee.bind(fetchNowIns)
+  const fetchNowIns = new Fetch(url, options, transformModel, setIsLoading)
+  const fetchNow = fetchNowIns.call.bind(fetchNowIns)
 
   const makeCall = async () => {
     let ignore = false
