@@ -6,8 +6,7 @@
   "scripts": {},
   "keywords": [],
   "dependencies": {
-    "react": "18.2.0",
-    "@utils/web": "workspace:*"
+    "react": "18.2.0"
   },
   "devDependencies": {},
   "author": "",
