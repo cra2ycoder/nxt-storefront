@@ -6,7 +6,8 @@
   "scripts": {},
   "keywords": [],
   "devDependencies": {
-    "sass": "1.55.0"
+    "sass": "1.55.0",
+    "typescript": "5.0.4"
   },
   "author": "",
   "license": "MIT"
