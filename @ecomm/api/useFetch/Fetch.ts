@@ -1,19 +1,29 @@
-import { IFetchNowProps, IUseFetchOptionsProps } from './typings'
+// import {} from '@utils/web'
 
-class FetchNow implements IFetchNowProps {
-  successCbk = (res: object) => {}
-  failureCbk = (err: object) => {}
+import {
+  IFetchProps,
+  TFetchOptionsProps,
+  TFetchTransformModelProps,
+} from './typings'
 
-  url = ''
-  options: IUseFetchOptionsProps = undefined
-  transformModel = undefined
-  preloadState = undefined
+class Fetch implements IFetchProps {
+  url: string
+  options?: TFetchOptionsProps | undefined
+  transformModel?: TFetchTransformModelProps | undefined
+  setIsLoading?: Function | undefined
+  successCbk?: Function | undefined
+  failureCbk?: Function | undefined
 
-  constructor(url, options, transformModel, preloadState) {
+  constructor(
+    url: string,
+    options?: TFetchOptionsProps,
+    transformModel?: TFetchTransformModelProps,
+    setIsLoading?: Function
+  ) {
     this.url = url
     this.options = options
     this.transformModel = transformModel
-    this.preloadState = preloadState
+    this.setIsLoading = setIsLoading || ((s: boolean) => {})
   }
 
   onSuccess(cbk: any) {
@@ -26,30 +36,20 @@ class FetchNow implements IFetchNowProps {
     return this
   }
 
-  callee(
-    url: string = '',
-    options: object = {},
-    transformModel: object = {},
-    preloadState: any = null
+  call(
+    options: TFetchOptionsProps = {},
+    transformModel: TFetchTransformModelProps = {}
   ) {
-    this.url = url && url !== 'same' ? url : this.url
     this.options = Object.keys(options).length ? options : this.options
     this.transformModel = Object.keys(transformModel).length
       ? transformModel
       : this.transformModel
-    this.preloadState =
-      preloadState || this.preloadState || ((s: boolean) => {})
 
-    console.log({
-      url,
-      options,
-      transformModel,
-      preloadState,
-    })
+    console.log({ options: this.options, transformModel: this.transformModel })
 
-    // console.log(this.preloadState)
+    const finalUrl = ''
 
-    this.preloadState(true)
+    this.setIsLoading(true)
 
     new Promise(async (x, y) => {
       await fetch(this.url, this.options?.headers || {})
@@ -61,13 +61,15 @@ class FetchNow implements IFetchNowProps {
           }
         })
         .then(data => {
-          this.preloadState(false)
+          this.setIsLoading(false)
+
           if (this.successCbk) {
             this.successCbk(data || {})
           }
         })
         .catch(err => {
-          this.preloadState(false)
+          this.setIsLoading(false)
+
           if (this.failureCbk) {
             this.failureCbk(err || {})
           }
@@ -77,5 +79,5 @@ class FetchNow implements IFetchNowProps {
   }
 }
 
-export { FetchNow }
-export default FetchNow
+export { Fetch }
+export default Fetch
