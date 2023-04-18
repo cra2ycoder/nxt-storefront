@@ -24,8 +24,7 @@
     "@styles/scss": "workspace:*",
     "@ecomm/pages": "workspace:*",
     "@ecomm/api": "workspace:*",
-    "@types/base": "workspace:*",
-    "@utils/web": "workspace:*"
+    "@types/base": "workspace:*"
   },
   "devDependencies": {
     "typescript": "4.7.4",
