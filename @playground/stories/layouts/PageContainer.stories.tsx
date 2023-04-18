@@ -1,5 +1,5 @@
 import React from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { StoryFn, Meta } from '@storybook/react'
 import { PageContainer } from '@ui/layouts/pages/PageContainer'
 
 export default {
@@ -7,7 +7,7 @@ export default {
   component: PageContainer,
 } as Meta
 
-const Template: Story<{}> = args => <PageContainer {...args} />
+const Template: StoryFn<{}> = args => <PageContainer {...args} />
 
 export const PageContainerComponent = Template.bind({})
 PageContainerComponent.storyName = 'Page Container'

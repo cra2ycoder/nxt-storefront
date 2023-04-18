@@ -1,5 +1,5 @@
 import React from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { StoryFn, Meta } from '@storybook/react'
 import { IParagraphTextProps } from '@ui/elements/typography/typings'
 import { ParagraphText } from '@ui/elements/typography/ParagraphText'
 
@@ -8,7 +8,9 @@ export default {
   component: ParagraphText,
 } as Meta
 
-const Template: Story<IParagraphTextProps> = args => <ParagraphText {...args} />
+const Template: StoryFn<IParagraphTextProps> = args => (
+  <ParagraphText {...args} />
+)
 
 export const SingleLine = Template.bind({})
 SingleLine.storyName = 'Single Line'

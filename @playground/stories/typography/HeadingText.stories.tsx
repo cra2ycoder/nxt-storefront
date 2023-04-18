@@ -1,5 +1,5 @@
 import React from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { StoryFn, Meta } from '@storybook/react'
 import { IHeadingTextProps } from '@ui/elements/typography/typings'
 import { HeadingText } from '@ui/elements/typography/HeadingText'
 // import customStyles from './customStyles.module.scss'
@@ -10,7 +10,7 @@ export default {
   component: HeadingText,
 } as Meta
 
-const Template: Story<IHeadingTextProps> = args => <HeadingText {...args} />
+const Template: StoryFn<IHeadingTextProps> = args => <HeadingText {...args} />
 
 export const H1 = Template.bind({})
 H1.storyName = 'h1'

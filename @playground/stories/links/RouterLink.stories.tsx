@@ -1,5 +1,5 @@
 import React from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { StoryFn, Meta } from '@storybook/react'
 import { IRouterLinkProps } from '@ui/elements/links/typings'
 import { RouterLink } from '@ui/elements/links/RouterLink'
 
@@ -8,7 +8,7 @@ export default {
   component: RouterLink,
 } as Meta
 
-const Template: Story<IRouterLinkProps> = args => <RouterLink {...args} />
+const Template: StoryFn<IRouterLinkProps> = args => <RouterLink {...args} />
 
 export const RouterLinkComponent = Template.bind({})
 RouterLinkComponent.storyName = 'Router Link'

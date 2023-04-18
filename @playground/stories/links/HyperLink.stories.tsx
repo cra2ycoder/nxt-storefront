@@ -1,5 +1,5 @@
 import React from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { StoryFn, Meta } from '@storybook/react'
 import { IHyperLinkProps } from '@ui/elements/links/typings'
 import { HyperLink } from '@ui/elements/links/HyperLink'
 
@@ -8,7 +8,7 @@ export default {
   component: HyperLink,
 } as Meta
 
-const Template: Story<IHyperLinkProps> = args => <HyperLink {...args} />
+const Template: StoryFn<IHyperLinkProps> = args => <HyperLink {...args} />
 
 export const HyperLinkComponent = Template.bind({})
 HyperLinkComponent.storyName = 'Hyper Link'

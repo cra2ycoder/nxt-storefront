@@ -1,5 +1,5 @@
 import React from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { StoryFn, Meta } from '@storybook/react'
 import { ICTALinkProps } from '@ui/elements/links/typings'
 import { CTALink } from '@ui/elements/links/CTALink'
 
@@ -8,7 +8,7 @@ export default {
   component: CTALink,
 } as Meta
 
-const Template: Story<ICTALinkProps> = args => <CTALink {...args} />
+const Template: StoryFn<ICTALinkProps> = args => <CTALink {...args} />
 
 export const CTALinkComponent = Template.bind({})
 CTALinkComponent.storyName = 'CTA Link'

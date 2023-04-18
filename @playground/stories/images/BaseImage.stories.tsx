@@ -1,5 +1,5 @@
 import React from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { StoryFn, Meta } from '@storybook/react'
 import { IBaseImageProps } from '@ui/elements/images/typings'
 import { BaseImage } from '@ui/elements/images/BaseImage'
 // import customStyles from './customStyles.module.scss'
@@ -10,7 +10,7 @@ export default {
   component: BaseImage,
 } as Meta
 
-const Template: Story<IBaseImageProps> = args => (
+const Template: StoryFn<IBaseImageProps> = args => (
   <div style={{ width: '350px', height: '250px', backgroundColor: 'red' }}>
     <BaseImage {...args} />
   </div>

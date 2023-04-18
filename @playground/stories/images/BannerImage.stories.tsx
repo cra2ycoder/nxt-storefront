@@ -1,5 +1,5 @@
 import React from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { StoryFn, Meta } from '@storybook/react'
 import { IBannerImageProps } from '@ui/elements/images/typings'
 import { BannerImage } from '@ui/elements/images/BannerImage'
 // import customStyles from './customStyles.module.scss'
@@ -10,7 +10,7 @@ export default {
   component: BannerImage,
 } as Meta
 
-const Template: Story<IBannerImageProps> = args => <BannerImage {...args} />
+const Template: StoryFn<IBannerImageProps> = args => <BannerImage {...args} />
 
 export const BannerImageStory = Template.bind({})
 BannerImageStory.storyName = 'Banner Image'

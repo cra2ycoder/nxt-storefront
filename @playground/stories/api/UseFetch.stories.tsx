@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { StoryFn, Meta } from '@storybook/react'
 // import { useFetch } from '@ecomm/api/useFetch'
 
 function Example() {
@@ -38,7 +38,7 @@ export default {
   component: Example,
 } as Meta
 
-const Template: Story = args => <Example {...args} />
+const Template: StoryFn = args => <Example {...args} />
 
 export const Example1 = Template.bind({})
 Example1.storyName = 'useFetch'

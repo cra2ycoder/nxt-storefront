@@ -1,5 +1,5 @@
 import React from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { StoryFn, Meta } from '@storybook/react'
 import { ISpanTextProps } from '@ui/elements/typography/typings'
 import { SpanText } from '@ui/elements/typography/SpanText'
 
@@ -8,7 +8,7 @@ export default {
   component: SpanText,
 } as Meta
 
-const Template: Story<ISpanTextProps> = args => <SpanText {...args} />
+const Template: StoryFn<ISpanTextProps> = args => <SpanText {...args} />
 
 export const SimpleText = Template.bind({})
 SimpleText.storyName = 'Simple Text'
