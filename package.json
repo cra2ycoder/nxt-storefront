@@ -10,9 +10,6 @@
     "lint": "next lint",
     "type-check": "tsc"
   },
-  "workspaces": [
-    "user-interfaces/*"
-  ],
   "dependencies": {
     "next": "latest",
     "react": "18.2.0",
@@ -27,7 +24,8 @@
     "@styles/scss": "workspace:*",
     "@ecomm/pages": "workspace:*",
     "@ecomm/api": "workspace:*",
-    "@types/base": "workspace:*"
+    "@types/base": "workspace:*",
+    "@utils/web": "workspace:*"
   },
   "devDependencies": {
     "typescript": "4.7.4",
