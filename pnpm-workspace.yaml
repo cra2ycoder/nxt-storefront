@@ -5,4 +5,4 @@ packages:
   - '@playground'
   - '@ecomm/*'
   - '@types'
-  # - '@utils'
+  - '@utils'
