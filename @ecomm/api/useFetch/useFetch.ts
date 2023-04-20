@@ -8,7 +8,13 @@ function useFetch(props: IUseFetchProps) {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [response, setResponse] = useState<object>({})
 
-  const fetchNowIns = new Fetch(url, options, transformModel, setIsLoading)
+  const fetchNowIns = new Fetch(
+    url,
+    options,
+    transformModel,
+    setIsLoading,
+    setResponse
+  )
   const fetchNow = fetchNowIns.call.bind(fetchNowIns)
 
   const makeCall = async () => {

@@ -1,3 +1,4 @@
+import { makeURL } from '@utils/web'
 import {
   IFetchProps,
   TFetchOptionsProps,
@@ -9,6 +10,7 @@ class Fetch implements IFetchProps {
   options?: TFetchOptionsProps | undefined
   transformModel?: TFetchTransformModelProps | undefined
   setIsLoading?: Function | undefined
+  setResponse?: Function | undefined
   successCbk?: Function | undefined
   failureCbk?: Function | undefined
 
@@ -16,12 +18,14 @@ class Fetch implements IFetchProps {
     url: string,
     options?: TFetchOptionsProps,
     transformModel?: TFetchTransformModelProps,
-    setIsLoading?: Function
+    setIsLoading?: Function,
+    setResponse?: Function
   ) {
     this.url = url
     this.options = options
     this.transformModel = transformModel
     this.setIsLoading = setIsLoading || ((s: boolean) => {})
+    this.setResponse = setResponse || ((res: any) => {})
   }
 
   onSuccess(cbk: any) {
@@ -38,19 +42,22 @@ class Fetch implements IFetchProps {
     options: TFetchOptionsProps = {},
     transformModel: TFetchTransformModelProps = {}
   ) {
+    const _self = this
     this.options = Object.keys(options).length ? options : this.options
     this.transformModel = Object.keys(transformModel).length
       ? transformModel
       : this.transformModel
 
-    console.log({ options: this.options, transformModel: this.transformModel })
-
-    // const finalUrl = ''
-
-    this.setIsLoading(true)
+    const finalUrl = makeURL(
+      this.url,
+      this.options?.pathParams || [],
+      this.options?.queryParams || {}
+    )
 
     new Promise(async (x, y) => {
-      await fetch(this.url, this.options?.headers || {})
+      _self?.setIsLoading(true)
+
+      await fetch(finalUrl, this.options?.headers || {})
         .then(res => {
           if (res.status > 400 && res.status >= 400) {
             throw res
@@ -59,17 +66,18 @@ class Fetch implements IFetchProps {
           }
         })
         .then(data => {
-          this.setIsLoading(false)
+          _self.setIsLoading(false)
+          _self.setResponse(data)
 
-          if (this.successCbk) {
-            this.successCbk(data || {})
+          if (_self.successCbk) {
+            _self.successCbk(data || {})
           }
         })
         .catch(err => {
-          this.setIsLoading(false)
+          _self.setIsLoading(false)
 
-          if (this.failureCbk) {
-            this.failureCbk(err || {})
+          if (_self.failureCbk) {
+            _self.failureCbk(err || {})
           }
         })
     })
