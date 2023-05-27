@@ -8,7 +8,7 @@ import {
   isObject,
   isArray,
   isNil,
-} from '@types/base'
+} from '../js/emptyCheck'
 import {
   IFetchOptions,
   IUnknownDataProps,
