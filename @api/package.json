@@ -1,0 +1,15 @@
+{
+  "name": "@api/fetch",
+  "version": "1.0.0-beta",
+  "description": "",
+  "private": "true",
+  "scripts": {},
+  "keywords": [],
+  "dependencies": {
+    "react": "18.2.0",
+    "@utils": "workspace:*"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "MIT"
+}
