@@ -1,8 +1,8 @@
 packages:
   - '@ui/*'
-  - '@api/*'
+  - '@api/fetch'
   - '@styles'
   - '@playground'
   - '@ecomm/*'
   - '@types'
-  - '@utils'
+  - '@utils/*'

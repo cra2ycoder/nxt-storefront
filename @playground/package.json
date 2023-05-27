@@ -13,7 +13,7 @@
     "@ui/elements": "workspace:*",
     "@ui/layouts": "workspace:*",
     "@styles/scss": "workspace:*",
-    "@ecomm/api": "workspace:*"
+    "@api/fetch": "workspace:*"
   },
   "devDependencies": {
     "@babel/preset-env": "7.21.4",
