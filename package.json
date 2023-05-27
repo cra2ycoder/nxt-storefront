@@ -23,8 +23,7 @@
     "@ui/layouts": "workspace:*",
     "@styles/scss": "workspace:*",
     "@ecomm/pages": "workspace:*",
-    "@ecomm/api": "workspace:*",
-    "@types/base": "workspace:*"
+    "@api/fetch": "workspace:*"
   },
   "devDependencies": {
     "typescript": "4.7.4",

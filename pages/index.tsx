@@ -1,8 +1,8 @@
 import React from 'react'
-import { useFetch } from '@ecomm/api/useFetch'
+import { useFetch } from '@api/fetch'
 
 function Example() {
-  const { fetchNow, response, isLoading } = useFetch({
+  const { fetchNow, response, status } = useFetch({
     init: false,
     url: 'https://jsonplaceholder.typicode.com/posts',
   })
@@ -18,14 +18,14 @@ function Example() {
     })
   }
 
-  console.log({ isLoading, response })
+  console.log({ status, response })
 
   return (
     <div>
       <button onClick={applyFilterNow}>Apply Filter</button>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <code style={{ maxWidth: '80%' }}>
-          {isLoading ? 'loading...' : JSON.stringify(response)}
+          {status === 'fetching' ? 'fetching...' : JSON.stringify(response)}
         </code>
       </div>
     </div>
