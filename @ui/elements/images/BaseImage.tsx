@@ -13,6 +13,7 @@ function BaseImage(props: IBaseImageProps) {
     size = 'fit',
     align = 'center',
   } = props
+
   const [hasError, setHasError] = useState(false)
 
   const onImageLoadingError = () => {

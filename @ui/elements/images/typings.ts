@@ -9,7 +9,7 @@ export interface IBaseImageProps extends IBaseImageSizeProps {
   srcSet?: string
   loading?: 'lazy' | 'eager'
   styleModule?: any
-  [key]?: string
+  [key: any]: string
 }
 
 export interface IBannerImageProps extends IBaseImageProps {}
